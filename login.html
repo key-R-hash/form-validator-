@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link href="stylesheet.css" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <main>
+            <div id="myModalk" class="modalk">
+
+                <!-- Modal content -->
+                <div class="modal-contentk">
+                    <span class="closek">&times;</span>
+                    <ul>
+                        <h4>Whoops!</h4>
+                        <li class="first_child">It look like there was a problem</li>
+                    </ul>
+                    <ul  id="li">
+                    </ul>
+                    <div>
+                        <button  id="OK">
+                            OK
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <p id="demo"></p>
+              <h1>Signup!</h1>
+            <span>Please tell us a little about yourself</span>
+            <form id="form" name="myForm"  method="post">
+                <fieldset>
+                    <label for='form1-Name'>Name</label>
+                    <input type='text' id='form1-Name' name='Name'>
+                </fieldset>
+                <fieldset>
+                    <label for='form1-Email'>Email</label>
+                    <input type='text' id='form1-Email' name='Email'>
+                </fieldset>
+                <fieldset>
+                    <label>Location</label>
+                    <select id="1" class="custom-select" name="Select">
+                        <option selected>
+                            Please select your country
+                        </option>
+                        <option value="option">
+                            Iran
+                        </option>
+                        <option>
+                            United kingdome
+                        </option>
+                        <option>
+                            America
+                        </option>
+                        <option>
+                            Germany
+                        </option>
+                        <option>
+                            Emarat
+                        </option>
+                        <option value="defalt">
+                            Iraq
+                        </option>
+                        <option value="defalt">
+                            Italy
+                        </option>
+                        <option value="defalt">
+                            Japan
+                        </option>
+                        <option value="defalt">
+                            Kenya
+                        </option>
+                        <option value="defalt">
+                            Kosovo
+                        </option>
+                        <option value="defalt">
+                            Laos
+                        </option>
+                        <option value="defalt">
+                            Lesotho
+                        </option>
+                        <option value="defalt">
+                            Libya
+                        </option>
+                        <option value="defalt">
+                            Syria
+                        </option>
+                        <option value="defalt">
+                            Turkey
+                        </option>
+                        <option value="defalt">
+                            Islands
+                        </option>
+                        <option value="defalt">
+                            Uganda
+                        </option>
+                        <option value="defalt">
+                            Zambia
+                        </option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <label for='form1-NationalCode' >NationalCode</label>
+                    <input type='text' id='form1-NationalCode' name='NationalCode' placeholder="00"  >
+                </fieldset>
+                <fieldset>
+                    <label for='form1-PhoneNumber'>PhoneNumber</label>
+                    <input type='text' id='form1-PhoneNumber' name='PhoneNumber' placeholder="00982185515151">
+                </fieldset>
+                <fieldset>
+                    <label for='form1-mobile'>mobile</label>
+                    <input type='text' id='form1-mobile' name='mobile' placeholder="00989123456789">
+                </fieldset>
+                <span>choose your username & password</span>
+                <fieldset>
+                    <label for='form1-Username'>Username</label>
+                    <input type='text' id='form1-Username' name='Username'>
+                </fieldset>
+                <fieldset>
+                    <label for='form1-Password'>Password</label>
+                    <input type='password' id='form1-Password' name='Password'>
+                </fieldset>
+                <input type="submit" value="Submit">
+            </form>
+            <a href="login.html"><input type="submit" value="Cansel"></a>
+        </main>
+        <script>
+            $(document).ready(function(){
+            $('#OK,.closek').click(function(){
+                var modalk = $('#myModalk');
+                modalk.css({'width' : "0%",'height' : "0%",'opacity' : "0"});
+
+            });
+
+            $("#form").submit(function() {
+                function isValidIranianNationalCode(input){
+                    input = $("#form1-NationalCode").val();
+
+                    if (!/^\d{10}$/.test(input))
+                        return false;
+
+                    var check = parseInt(input[9]);
+                    var sum = 0;
+                    var i;
+                    for (i = 0; i < 9; ++i) {
+                        sum += parseInt(input[i]) * (10 - i);
+                    }
+                    sum %= 11;
+                    return (sum < 2 && check == sum) || (sum >= 2 && check + sum == 11);
+
+                }
+                var Errors = [];
+                var option = $('#1').val();
+                var modalk = $('#myModalk');
+                var Name = $("#form1-Name").val();
+                var Password = $('#form1-Password').val();
+                var PhoneNumber = $('#form1-PhoneNumber').val();
+                var PhoneNumber_one = PhoneNumber.substr(0, 4);
+                var mobile = $("#form1-mobile").val();
+                var mobile_one = mobile.substr(0, 4);
+                var Username = $('#form1-Username').val();
+                var x = $('#form1-Email').val();
+                var NationalCode = $("#form1-NationalCode").val();
+                var atpos = x.indexOf("@");
+                var dotpos = x.lastIndexOf(".");
+                var a = PhoneNumber_one.indexOf("0098");
+                var b = mobile_one.indexOf("0098");
+                var c = PhoneNumber_one.indexOf("0044");
+                var d = mobile_one.indexOf("0044");
+                var e = PhoneNumber_one.indexOf("0684");
+                var f = mobile_one.indexOf("0684");
+                var g = PhoneNumber_one.indexOf("0049");
+                var h = mobile_one.indexOf("0049");
+                var i = PhoneNumber_one.indexOf("0971");
+                var j = mobile_one.indexOf("0971");
+                if (option == "defalt"){
+                    if(NationalCode == "" || 10 !== NationalCode.length || !NationalCode.match(/^\d+/)){
+                        Errors.push("Please Enter The Valid NationalCode");
+                    }
+                }
+                if (option == "option") {
+                    var value = isValidIranianNationalCode();
+                    if(value == false ){
+                        Errors.push("Please Enter The Valid NationalCode for iran");
+                    }
+                    if (a == -1) {
+                        Errors.push("Please enter the valid PhoneNumber for your country");
+                    }
+                    if (b == -1) {
+                        Errors.push("Please enter the valid mobile for your country");
+                    }
+                }
+                if(option == "United kingdome"){
+                    if(c == -1){
+                        Errors.push("Please enter the valid PhoneNumber for your country");
+                    }
+                    if(d == -1){
+                        Errors.push("Please enter the valid mobile for your country");
+                    }
+                }
+                if(option == "America"){
+                    if(e == -1){
+                        Errors.push("Please enter the valid PhoneNumber for your country");
+                    }
+                    if(f == -1){
+                        Errors.push("Please enter the valid mobile for your country");
+                    }
+                }
+                if(option == "Germany"){
+                    if(g == -1){
+                        Errors.push("Please enter the valid PhoneNumber for your country");
+                    }
+                    if(h == -1){
+                        Errors.push("Please enter the valid mobile for your country");
+                    }
+                }
+                if(option == "Emarat"){
+                    if(i == -1){
+                        Errors.push("Please enter the valid PhoneNumber for your country");
+                    }
+                    if(j == -1){
+                        Errors.push("Please enter the valid mobile for your country");
+                    }
+                }
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+                    Errors.push("Your Email Is Not Valide")
+                }
+                if (Name == "") {
+                    Errors.push("Please Fill In The Name Field")
+                }
+                if (Password == "" || Password.length <= 6) {
+                    Errors.push("Your Password Is Not Valide")
+                }
+                if (PhoneNumber == "" || 14 !== PhoneNumber.length || !PhoneNumber.match(/^\d+/)) {
+                    Errors.push("Your PhoneNumber Is Not Valie")
+                }
+                if (mobile == "" || 14 !== mobile.length || !mobile.match(/^\d+/)) {
+                    Errors.push("Your Mobile Is Not Valid")
+                }
+                if (Username == "" || Username.length <= 6 || Username.length <= !20) {
+                    Errors.push("Your Username Is Not Valid")
+                }
+                if (option == "Please select your country") {
+                    Errors.push("Please Select Country")
+                }
+                $("#li").html('') ;
+                $.each(Errors,function(index , Error){
+                    $('#li').append("<li>"+Error+"</li>")
+                });
+                if(Errors.length > 0){
+                    modalk.css({'width' : "100%",'height' : "100%",'opacity' : "1"});
+                    console.log(Errors);
+                    return false;
+                }
+                });
+
+                 $('#1').change(function () {
+
+                     var country = $('#1').val();
+                     if(country == 'option'){
+                         $('#form1-PhoneNumber').attr('placeholder','00982185515151');
+                         $('#form1-mobile').attr('placeholder','00989123456789');
+                     }
+                     if(country == 'United kingdome'){
+                         $('#form1-PhoneNumber').attr('placeholder','00442185515151');
+                         $('#form1-mobile').attr('placeholder','00449123456789');
+                     }
+                     if(country == 'America'){
+                         $('#form1-PhoneNumber').attr('placeholder','06842185515151');
+                         $('#form1-mobile').attr('placeholder','06849123456789');
+                     }
+                     if(country == 'Germany'){
+                         $('#form1-PhoneNumber').attr('placeholder','00492185515151');
+                         $('#form1-mobile').attr('placeholder','00499123456789');
+                     }
+                     if(country == 'Emarat'){
+                         $('#form1-PhoneNumber').attr('placeholder','09712185515151');
+                         $('#form1-mobile').attr('placeholder','09719123456789');
+                     }
+                     if(country == 'defalt' || country == 'Please select your country'){
+                         $('#form1-PhoneNumber').attr('placeholder','00982185515151');
+                         $('#form1-mobile').attr('placeholder','00989123456789');
+                     }
+                 });
+            });
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+</html>

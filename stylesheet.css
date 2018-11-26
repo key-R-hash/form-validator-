@@ -1,0 +1,154 @@
+body{
+    width: 100%;
+    background-color: #e7f5fe;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+}
+main{
+    background-color: #f8f8f8;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 731px;
+    position: absolute;
+    border: 1px solid #dfe7e9;
+    line-height: 0px;
+    border-radius: 15px;
+}
+fieldset{
+    line-height: 3px;
+    border: none;
+}
+input[type="text"],input[type="password"],select{
+    border-radius: 4px;
+    border: 1px solid gray;
+    width: 330px;
+    height: 38px;
+    padding-left: 10px;
+    margin-top: 18px;
+}
+label{
+    color: gray;
+    padding-left: 10px;
+}
+h1,span{
+    margin-left: 20px;
+    margin-bottom: -9px;
+    font-weight: bold;
+}
+span{
+    color: gray;
+    line-height: 75px;
+}
+input[type="submit"],button#OK{
+    float: right;
+    margin-right: 25px;
+    margin-top: 20px;
+    width: 90px;
+    height: 37px;
+    background: #3179b4;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid gray;
+}
+#form1-Name{
+    margin-left: 86px;
+}
+#form1-Email{
+    margin-left: 89px;
+}
+#form1-NationalCode{
+    margin-left: 32px;
+}
+#form1-Username{
+    margin-left: 55px;
+}
+#form1-Password{
+    margin-left: 58px;
+    margin-bottom: 18px;
+}
+#form1-PhoneNumber{
+    margin-left: 25px;
+}
+#form1-mobile{
+    margin-left: 81px;
+}
+input[value="Cansel"]{
+    margin-right: 15px;
+    background-color: white;
+    color: black;
+    margin-top: 20px;
+}
+form{
+    margin-top: -14px;
+}
+select{
+    margin-left: 68px;
+    border: black;
+}
+.modalk {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 0%;
+    overflow: auto;
+    line-height: 33px;
+    opacity: 0;
+    background-color: #ffffff;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-contentk {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 92%;
+    border-radius: 10px;
+    height: 485px;
+}
+.closek {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+    line-height: 0px;
+    padding-right: 15px;
+    padding-top: 35px;
+}
+.closek:hover,
+.closek:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+div.modal-contentk h4{
+    border-bottom: 1px solid #dfdfdf;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 20px;
+    padding-top: 29px;
+    padding-bottom: 31px;
+}
+li.first_child{
+    list-style-type: none;
+    margin-left: 18px;
+}
+ul{
+    padding: 0px;
+}
+li{
+    margin-left: 65px;
+}
+div.modal-contentk div{
+    border-bottom: 1px solid #dfdfdf;
+}
+form{
+    border-bottom: 1px solid white;
+    border-top: 2px solid white;
+}
